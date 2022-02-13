@@ -1,0 +1,44 @@
+sudo apt-get install wget ca-certificates
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+apt show postgresql
+sudo su - postgres
+psql
+\conninfo
+
+
+sudo passwd postgres 
+
+su - postgres 
+psql -c "ALTER USER postgres WITH PASSWORD 'root';" 
+exit
+
+sudo systemctl restart postgresql 
+
+Install pgAdmin
+
+curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add -
+sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list' 
+
+sudo apt update
+sudo apt install pgadmin4 
+sudo /usr/pgadmin4/bin/setup-web.sh 
+
+
+Change Password:
+sudo -u postgres -i
+psql
+\password postgres
+
+
+
+
+CREATE DATABASE dbname;
+\list
+
+sudo -u postgres psql
+postgres=# create database mydb;
+postgres=# create user myuser with encrypted password 'mypass';
+postgres=# grant all privileges on database mydb to myuser;
