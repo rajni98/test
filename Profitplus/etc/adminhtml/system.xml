@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="profitplus" translate="label" sortOrder="10">
+            <label>Profitplus</label>
+        </tab>
+        <section id="custom_settings" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Settings</label>
+            <tab>profitplus</tab>
+             <resource>Appcoders_Profitplus::custom_settings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                
+                <field id="image" translate="label comment" type="image" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Store Image</label>
+                    <backend_model>Appcoders\Profitplus\Model\Config\Backend\Image</backend_model>
+                      <base_url type="media" scope_info="1">appcoders/backendimage</base_url>
+                    <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]></comment>
+                </field>
+
+                 <field id="image1" translate="label comment" type="image" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Store Image1</label>
+                    <backend_model>Appcoders\Profitplus\Model\Config\Backend\Image</backend_model>
+                      <base_url type="media" scope_info="1">appcoders/backendimage</base_url>
+                    <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]></comment>
+                </field>
+    <field id="display_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Top Text</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+                <field id="display_token" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Bottom Text</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+                <field id="btncolor" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Button Color</label>
+                    <frontend_model>Appcoders\Profitplus\Block\Color</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

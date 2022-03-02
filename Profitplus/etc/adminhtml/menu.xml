@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Appcoders_Profitplus::parent" title="Profitplus" module="Appcoders_Profitplus" sortOrder="100" resource="Appcoders_Profitplus::parent"/>
+        <add id="Appcoders_Profitplus::index" title="Profitplus Index" module="Appcoders_Profitplus" sortOrder="10" action="profitplus/index" resource="Appcoders_Profitplus::index" parent="Appcoders_Profitplus::parent"/>
+		
+    </menu>
+</config>
